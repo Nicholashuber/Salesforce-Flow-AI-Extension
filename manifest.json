@@ -1,0 +1,33 @@
+{
+   "background": {
+      "service_worker": "scripts/background.js",
+      "type": "module"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "scripts/content.js" ],
+      "matches": [ "https://*.salesforce.com/*", "https://*.salesforce-setup.com/*", "https://*.vf.force.com/*", "https://*.visual.force.com/*", "https://*.lightning.force.com/*", "https://*.cloudforce.com/*", "https://*.visualforce.com/*" ],
+      "type": "module"
+   } ],
+   "description": "Shows tooltips on flow elements and exposes flow information with GPT queries",
+   "host_permissions": [ "https://*.salesforce.com/*", "https://*.visual.force.com/*", "https://*.lightning.force.com/*", "https://*.cloudforce.com/*", "https://*.visualforce.com/*" ],
+   "icons": {
+      "128": "images/icon-128.png",
+      "16": "images/icon-16.png",
+      "32": "images/icon-32.png",
+      "48": "images/icon-48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr6ltD5//t2pmt/Sh5PsGGWfXrVvApY3bwhGFEWDSrYBdW632sb3Fz25+xT3UjnuHuFAHXIfwB6cSgU/Hy9L/OacA6NbPMGF5hhUQ5q6PmdVs5F5V26LAquqOsOAT4tty9pYUh3jQ5Jt2ENUGsW+iWI7Z1C1VjIOxZ3x5NNvzVKmJjTjk0D8ZnLwmSuyrf2jHBF+lweGVwJRioyThwSv214AFkb7cDl3yvcC08HiKjx3kVBjFG0s1rz1tiXjTfJumplfehM3uYySdALhgFHPD4E8YbjDna3KhdQFIzldjzdDrBGblcyenbBf5/LUG8yPxdj8zGG7dDr21sm6Nf6U+zwIDAQAB",
+   "manifest_version": 3,
+   "name": "Nicks Salesforce Flow Extension",
+   "permissions": [ "cookies" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.1.6",
+   "web_accessible_resources": [ {
+      "matches": [ "https://*.salesforce.com/*", "https://*.visual.force.com/*", "https://*.lightning.force.com/*", "https://*.cloudforce.com/*", "https://*.visualforce.com/*" ],
+      "resources": [ "scripts/*", "popup.html" ]
+   } ],
+   "content_security_policy": {
+      "extension_pages": "script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' https://cdn.jsdelivr.net https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; object-src 'self';"
+   }
+}

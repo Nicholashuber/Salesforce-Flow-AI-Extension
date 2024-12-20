@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flow Diagram</title>
+    <!-- Remove or comment out the external Mermaid.js script reference -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script> -->
+
+    <!-- Add a local reference to Mermaid instead -->
+    <script src="./scripts/mermaid.min.js"></script>
+
+    <!-- You can still include your local CSS or other libraries as needed -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shadcn/ui.css" /> -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="./popup.css" />
+</head>
+<body class="bg-white text-gray-800">
+    <div id="main" class="p-4">
+        <!-- Default Explainer -->
+        <div id="defaultExplainer" class="mb-4">
+            <!-- Content will be dynamically inserted -->
+        </div>
+
+        <!-- GPT Section -->
+        <div id="gpt" class="mb-4">
+            <label for="openAIKey" class="block text-sm font-medium">OpenAI Key</label>
+            <input id="openAIKey" type="password" name="openAIKey" class="mt-1 block w-full border rounded-md p-2" />
+            <button id="setKey" class="mt-2 px-4 py-2 bg-blue-600 text-white rounded-md">Set OpenAI Key</button>
+        </div>
+
+        <!-- Flow Explainer -->
+        <div id="flowExplainer" class="mb-4">
+            <div id="gptInputs"></div>
+            <span id="error" class="text-red-500 font-bold"></span>
+            <div id="spinner" class="lds-dual-ring mt-4 hidden"></div>
+            <span id="response" class="mt-2 block"></span>
+        </div>
+
+        <!-- Flow Diagram -->
+        <div id="flow" class="mt-4">
+            <!-- Flow content will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <!-- Mermaid Diagram Container -->
+    <div id="mermaidDiagram" class="mt-4">
+        <!-- The diagram will be rendered here -->
+    </div>
+
+    <script src="./scripts/popup.js"></script>
+    <script>
+        // Initialize Mermaid
+        //mermaid.initialize({ startOnLoad: false });
+    </script>
+</body>
+</html>
